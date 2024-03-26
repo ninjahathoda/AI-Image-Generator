@@ -24,15 +24,16 @@ async function fetchImages(category) {
 		const url = "https://chatgpt-42.p.rapidapi.com/texttoimage";
 		let response = 
 		await fetch(url,options); 
-		console.log(response);
+		console.log(response.body);
+		
 		if (!response.ok) { 
 			throw new Error('Unable to fetch the data'); 
 		} 
 		imageContainerText.innerText = 
 		"Below is your generated Image:"; 
 		imageContainer.style.display = "block"; 
-		imageGenerated.src = response.url; 
-		console.log(response.url); 
+		imageGenerated.src = response.body["generated_image"]; 
+		console.log(response.body["generated_image"]); 
 	} 
 	catch (error) { 
 		console.log(error); 

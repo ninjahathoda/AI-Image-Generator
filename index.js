@@ -35,10 +35,8 @@ async function fetchImages(category) {
 		    }
 		    return response.text(); // This returns a promise
 		  })
-		  .then(textPromise => {
-		    return textPromise.then(text => {
-		      console.log(text); // This prints the response text
-		    });
+		  .then(text => {
+		     console.log(text);
 		  })
 		  .catch(error => {
 		    console.error('Error fetching data:', error);

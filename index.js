@@ -22,20 +22,35 @@ async function fetchImages(category) {
 			};
 		console.log(options);
 		const url = "https://chatgpt-42.p.rapidapi.com/texttoimage";
-		let response = 
-		await fetch(url,options); 
-		let result = response.text();
-		console.log(result);
-		console.log(result['generated_image']);
-		console.log(result.generated_image);
-		
+		// let response = 
+		// await fetch(url,options); 
+		// let result = response.text();
+		// console.log(result);
+		// console.log(result['generated_image']);
+		// console.log(result.generated_image);
+		fetch('https://example.com/api/data')
+		  .then(response => {
+		    if (!response.ok) {
+		      throw new Error('Network response was not ok');
+		    }
+		    return response.text(); // This returns a promise
+		  })
+		  .then(textPromise => {
+		    return textPromise.then(text => {
+		      console.log(text); // This prints the response text
+		    });
+		  })
+		  .catch(error => {
+		    console.error('Error fetching data:', error);
+		  });
+				
 		if (!response.ok) { 
 			throw new Error('Unable to fetch the data'); 
 		} 
-		imageContainerText.innerText = 
-		"Below is your generated Image:"; 
-		imageContainer.style.display = "block"; 
-		imageGenerated.src = result['generated_image'];
+		// imageContainerText.innerText = 
+		// "Below is your generated Image:"; 
+		// imageContainer.style.display = "block"; 
+		// imageGenerated.src = result['generated_image'];
 	} 
 	catch (error) { 
 		console.log(error); 

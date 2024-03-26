@@ -28,7 +28,7 @@ async function fetchImages(category) {
 		// console.log(result);
 		// console.log(result['generated_image']);
 		// console.log(result.generated_image);
-		fetch('https://example.com/api/data')
+		fetch(url,options)
 		  .then(response => {
 		    if (!response.ok) {
 		      throw new Error('Network response was not ok');
@@ -44,9 +44,9 @@ async function fetchImages(category) {
 		    console.error('Error fetching data:', error);
 		  });
 				
-		if (!response.ok) { 
-			throw new Error('Unable to fetch the data'); 
-		} 
+		// if (!response.ok) { 
+		// 	throw new Error('Unable to fetch the data'); 
+		// } 
 		// imageContainerText.innerText = 
 		// "Below is your generated Image:"; 
 		// imageContainer.style.display = "block"; 

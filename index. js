@@ -11,8 +11,17 @@ let imageContainer =
 
 async function fetchImages(category) { 
 	try { 
+		const options = {
+				method: 'GET',
+				headers: {
+					'X-RapidAPI-Key': '94f93722f0msh77dde61d8d67535p1ca6f4jsne1de877646e0',
+					'X-RapidAPI-Host': 'text-to-image7.p.rapidapi.com'
+				}
+			};
+		const url = "https://text-to-image7.p.rapidapi.com/?prompt=box&batch_size=1";
 		let response = 
-		await fetch(`use a API`); 
+		await fetch(url,options); 
+		console.log(response);
 		if (!response.ok) { 
 			throw new Error('Unable to fetch the data'); 
 		} 

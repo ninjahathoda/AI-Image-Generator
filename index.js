@@ -12,13 +12,17 @@ let imageContainer =
 async function fetchImages(category) { 
 	try { 
 		const options = {
-				method: 'GET',
+				method: 'POST',
 				headers: {
-					'X-RapidAPI-Key': '94f93722f0msh77dde61d8d67535p1ca6f4jsne1de877646e0',
-					'X-RapidAPI-Host': 'text-to-image7.p.rapidapi.com'
-				}
+				'content-type': 'application/json',
+				'X-RapidAPI-Key': '94f93722f0msh77dde61d8d67535p1ca6f4jsne1de877646e0',
+				'X-RapidAPI-Host': 'chatgpt-42.p.rapidapi.com'
+				},
+				body: {text: category}
 			};
-		const url = "https://text-to-image7.p.rapidapi.com/?prompt=box&batch_size=1";
+		console.log(options);
+		// const url = "https://chatgpt-42.p.rapidapi.com/texttoimage";
+		const url = "dhdjd";
 		let response = 
 		await fetch(url,options); 
 		console.log(response);

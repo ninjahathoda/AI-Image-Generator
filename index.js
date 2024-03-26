@@ -21,8 +21,7 @@ async function fetchImages(category) {
 				body: {text: category}
 			};
 		console.log(options);
-		// const url = "https://chatgpt-42.p.rapidapi.com/texttoimage";
-		const url = "dhdjd";
+		const url = "https://chatgpt-42.p.rapidapi.com/texttoimage";
 		let response = 
 		await fetch(url,options); 
 		console.log(response);
